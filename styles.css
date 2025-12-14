@@ -335,3 +335,18 @@ a:hover {
         font-size: 0.9rem;
     }
 }
+
+/* Fix profile image cut on mobile */
+@media (max-width: 768px) {
+    header {
+        overflow: visible;
+    }
+
+    .carousel {
+        overflow: visible;
+    }
+
+    .profile-container {
+        margin-top: -55px; /* reduce negative margin on mobile */
+    }
+}
