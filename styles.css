@@ -350,3 +350,60 @@ a:hover {
         margin-top: -55px; /* reduce negative margin on mobile */
     }
 }
+
+/* ==============================
+   PAGE LOADER STYLES
+============================== */
+#pageLoader {
+    position: fixed;
+    inset: 0;
+    background: #f8f9fc;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+body.dark-mode #pageLoader {
+    background: #0b1020;
+}
+
+#pageLoader.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loader-content {
+    text-align: center;
+}
+
+.loader-content p {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #6b7280;
+}
+
+/* Spinner */
+.spinner {
+    width: 46px;
+    height: 46px;
+    border: 4px solid rgba(0, 0, 0, 0.08);
+    border-top: 4px solid var(--primary);
+    border-radius: 50%;
+    animation: spin 0.9s linear infinite;
+}
+
+body.dark-mode .spinner {
+    border-color: rgba(255, 255, 255, 0.15);
+    border-top-color: var(--gold);
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
