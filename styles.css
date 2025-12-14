@@ -1,0 +1,337 @@
+/* Base */
+:root {
+    --primary: #001f5f;
+    --gold: #d4af37;
+    --light-bg: #f8f9fc;
+    --light-card: #ffffff;
+    --border-soft: #e4e6ed;
+    --text-main: #1f2933;
+    --text-muted: #6b7280;
+    --shadow-soft: 0 10px 30px rgba(15, 23, 42, 0.12);
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--light-bg);
+    color: var(--text-main);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark mode */
+body.dark-mode {
+    background-color: #0b1020;
+    color: #e5e7eb;
+}
+
+body.dark-mode .section-card,
+body.dark-mode .list-group-item {
+    background-color: #111827;
+    border-color: #1f2937;
+}
+
+body.dark-mode .nav-tabs .nav-link {
+    color: #9ca3af;
+}
+
+body.dark-mode .nav-tabs .nav-link.active {
+    background-color: var(--gold);
+    color: #111827;
+}
+
+body.dark-mode .btn-custom {
+    background-color: var(--gold);
+    color: #111827;
+}
+
+body.dark-mode .site-footer {
+    border-top-color: #1f2937;
+    background-color: #030712;
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+    position: fixed;
+    right: 1.25rem;
+    bottom: 5rem;
+    z-index: 999;
+    border: none;
+    border-radius: 999px;
+    padding: 0.6rem 0.75rem;
+    background: var(--light-card);
+    box-shadow: 0 6px 20px rgba(15, 23, 42, 0.18);
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease;
+}
+
+.theme-toggle i {
+    font-size: 1.1rem;
+    color: var(--primary);
+}
+
+body.dark-mode .theme-toggle {
+    background: #111827;
+}
+
+body.dark-mode .theme-toggle i {
+    color: var(--gold);
+}
+
+.theme-toggle:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.25);
+}
+
+/* Scroll top button */
+.scroll-top {
+    position: fixed;
+    right: 1.25rem;
+    bottom: 1.75rem;
+    z-index: 999;
+    width: 40px;
+    height: 40px;
+    border-radius: 999px;
+    border: none;
+    background-color: var(--primary);
+    color: #ffffff;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.25s ease;
+    cursor: pointer;
+}
+
+.scroll-top i {
+    font-size: 0.9rem;
+}
+
+.scroll-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.scroll-top:hover {
+    background-color: #003080;
+}
+
+/* Hero Banner */
+.hero-banner {
+    max-height: 320px;
+    object-fit: cover;
+}
+
+/* Profile */
+.profile-container {
+    position: relative;
+    margin-top: -75px;
+}
+
+.profile-img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    border: 5px solid #ffffff;
+    object-fit: cover;
+    box-shadow: 0 18px 45px rgba(15, 23, 42, 0.35);
+    background-color: #ffffff;
+}
+
+.name-title {
+    font-family: 'Cinzel', serif;
+    font-size: 2.1rem;
+    letter-spacing: 0.04em;
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.role-title {
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+}
+
+.tagline {
+    margin-top: 0.3rem;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+.contact-inline {
+    font-size: 0.95rem;
+    color: var(--text-main);
+}
+
+/* Contact Icons */
+.contact-icons a {
+    margin: 0 8px;
+    font-size: 1.3rem;
+    color: var(--primary);
+    transition: 0.25s ease;
+}
+
+.contact-icons a:hover {
+    color: var(--gold);
+    transform: translateY(-2px) scale(1.05);
+}
+
+/* Buttons */
+.btn-custom {
+    background-color: var(--primary);
+    color: #ffffff;
+    border-radius: 999px;
+    padding: 0.55rem 1.4rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border: none;
+    box-shadow: 0 8px 22px rgba(15, 23, 42, 0.25);
+    transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-custom:hover {
+    background-color: #003080;
+    transform: translateY(-1px);
+    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.32);
+}
+
+/* Tabs */
+.nav-tabs {
+    border-bottom: 1px solid var(--border-soft);
+}
+
+.nav-tabs .nav-link {
+    color: var(--primary);
+    font-weight: 500;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    border: none;
+    padding: 0.75rem 1rem;
+    position: relative;
+    letter-spacing: 0.06em;
+}
+
+.nav-tabs .nav-link:hover {
+    background-color: rgba(0, 31, 95, 0.04);
+    color: var(--primary);
+}
+
+.nav-tabs .nav-link.active {
+    background-color: transparent;
+    color: var(--primary);
+    border-bottom: 3px solid var(--gold);
+}
+
+/* Sections */
+.section-title {
+    font-family: 'Cinzel', serif;
+    color: var(--primary);
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 1.1rem;
+    letter-spacing: 0.22em;
+    margin-bottom: 1.25rem;
+}
+
+.section-card {
+    background-color: var(--light-card);
+    border-radius: 1.25rem;
+    border: 1px solid var(--border-soft);
+    box-shadow: var(--shadow-soft);
+    padding: 0.25rem 0;
+}
+
+/* List Group */
+.list-group-item {
+    border-left: none;
+    border-right: none;
+    border-color: var(--border-soft);
+    padding-top: 0.85rem;
+    padding-bottom: 0.85rem;
+}
+
+.list-group-item:first-child {
+    border-top: none;
+    border-radius: 1.25rem 1.25rem 0 0;
+}
+
+.list-group-item:last-child {
+    border-bottom: none;
+    border-radius: 0 0 1.25rem 1.25rem;
+}
+
+/* Bullet List */
+.bullet-list {
+    list-style-type: disc;
+    padding-left: 1.1rem;
+    font-size: 0.92rem;
+    color: var(--text-main);
+}
+
+.bullet-list li + li {
+    margin-top: 0.2rem;
+}
+
+/* Icons within items */
+.list-group-item i {
+    font-size: 1.15rem;
+    color: var(--gold);
+}
+
+/* Links */
+a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--gold);
+    text-decoration: none;
+}
+
+/* Footer */
+.site-footer {
+    border-top: 1px solid var(--border-soft);
+    padding: 1.3rem 0 1.1rem;
+    background-color: #fdfdfd;
+    margin-top: 2.5rem;
+}
+
+.site-footer p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .profile-img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .name-title {
+        font-size: 1.6rem;
+    }
+
+    .role-title {
+        font-size: 0.85rem;
+    }
+
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .nav-tabs .nav-link {
+        font-size: 0.75rem;
+        padding: 0.6rem 0.5rem;
+    }
+
+    .section-card {
+        border-radius: 1rem;
+    }
+
+    .list-group-item {
+        font-size: 0.9rem;
+    }
+}
