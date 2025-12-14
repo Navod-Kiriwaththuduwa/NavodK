@@ -21,13 +21,13 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body class="light-mode">
-<!-- PAGE LOADER -->
-<div id="pageLoader">
-    <div class="loader-content">
-        <div class="spinner"></div>
-        <p>Loading Portfolio…</p>
-    </div>
-</div>
+//<!-- PAGE LOADER -->
+//<div id="pageLoader">
+//    <div class="loader-content">
+//        <div class="spinner"></div>
+   //     <p>Loading Portfolio…</p>
+   // </div>
+//</div>
 
     <!-- Theme Toggle -->
     <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode">
@@ -679,45 +679,46 @@
             localStorage.setItem('navod-theme', isDark ? 'dark' : 'light');
         });
 		        // PAGE LOADER – wait for ALL images
-document.addEventListener('DOMContentLoaded', () => {
-    const loader = document.getElementById('pageLoader');
-    const images = document.images;
-    let loadedImages = 0;
-    const totalImages = images.length;
+//document.addEventListener('DOMContentLoaded', () => {
+//    const loader = document.getElementById('pageLoader');
+//    const images = document.images;
+//    let loadedImages = 0;
+  //  const totalImages = images.length;
 
-    if (totalImages === 0) {
-        hideLoader();
-        return;
-    }
+  //  if (totalImages === 0) {
+  //      hideLoader();
+  //      return;
+ //   }
 
-    function imageLoaded() {
-        loadedImages++;
-        if (loadedImages === totalImages) {
-            hideLoader();
-        }
-    }
+    //function imageLoaded() {
+    //    loadedImages++;
+     //   if (loadedImages === totalImages) {
+       //     hideLoader();
+      //  }
+   / }
 
-    function hideLoader() {
-        loader.classList.add('hidden');
-        setTimeout(() => {
-            loader.style.display = 'none';
-        }, 600);
-    }
+   // function hideLoader() {
+  //      loader.classList.add('hidden');
+  //      setTimeout(() => {
+ //           loader.style.display = 'none';
+ //       }, 600);
+  //  }
 
-    for (let img of images) {
-        if (img.complete) {
-            imageLoaded();
-        } else {
-            img.addEventListener('load', imageLoaded);
-            img.addEventListener('error', imageLoaded);
-        }
-    }
-});
+  //  for (let img of images) {
+    //    if (img.complete) {
+    //        imageLoaded();
+    //    } else {
+     //       img.addEventListener('load', imageLoaded);
+     //       img.addEventListener('error', imageLoaded);
+    //    }
+  //  }
+//});
 
 
     </script>
 </body>
 </html>
+
 
 
 
