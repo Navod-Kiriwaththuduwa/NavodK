@@ -22,6 +22,18 @@
 </head>
 <body class="light-mode">
 
+<!-- Page Loader -->
+<div id="pageLoader">
+    <div class="loader-content">
+        <div class="spinner"></div>
+        <h1 class="loader-title">Navod Kiriwaththuduwa</h1>
+                <h5 class="role-title">Engineering Professional | Leadership, Service & Community Development Advocate</h5>
+  		<p class="tagline">
+                    Engineering Efficiency, Empowering People, Elevating Performance.
+                </p>               
+
+    </div>
+</div>
 
     <!-- Theme Toggle -->
     <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode">
@@ -695,6 +707,12 @@
             setTheme(isDark);
             localStorage.setItem('navod-theme', isDark ? 'dark' : 'light');
         });
+// Page Loader (4 seconds)
+window.addEventListener('load', () => {
+    setTimeout(() => {
+        document.getElementById('pageLoader').classList.add('hidden');
+    }, 4000);
+});
 
     </script>
 </body>

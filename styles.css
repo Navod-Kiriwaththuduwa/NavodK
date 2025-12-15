@@ -144,6 +144,15 @@ body.dark-mode .theme-toggle i {
     color: var(--primary);
 }
 
+.loader-title {
+    font-family: 'Cinzel', serif;
+    font-size: 2.1rem;
+    letter-spacing: 0.04em;
+    font-weight: 600;
+    color: var(--text-muted);
+}
+
+
 .role-title {
     font-size: 1.05rem;
     font-weight: 500;
@@ -351,4 +360,59 @@ a:hover {
     }
 }
 
+/* =========================
+   Page Loader
+========================= */
+#pageLoader {
+    position: fixed;
+    inset: 0;
+    background: #0b1020;
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.8s ease, visibility 0.8s ease;
+}
+
+#pageLoader.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Loader Content */
+.loader-content {
+    text-align: center;
+    color: #e5e7eb;
+}
+
+/* Spinner */
+.spinner {
+    width: 52px;
+    height: 52px;
+    border: 4px solid rgba(255, 255, 255, 0.2);
+    border-top: 4px solid #d4af37;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 1rem;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Loader Text */
+.loader-text {
+    font-family: 'Cinzel', serif;
+    letter-spacing: 0.12em;
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+}
+
+.loader-sub {
+    font-size: 0.85rem;
+    color: #9ca3af;
+    letter-spacing: 0.08em;
+}
 
