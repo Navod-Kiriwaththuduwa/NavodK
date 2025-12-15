@@ -20,7 +20,7 @@
     <!-- Custom Styles -->
     <link rel="stylesheet" href="styles.css">
 </head>
-<body class="light-mode">
+<body class="light-mode page-hidden">
 
 <!-- Page Loader -->
 <div id="pageLoader">
@@ -707,10 +707,21 @@
             setTheme(isDark);
             localStorage.setItem('navod-theme', isDark ? 'dark' : 'light');
         });
-// Page Loader (4 seconds)
+
+// Page Loader - block page until loader finishes
 window.addEventListener('load', () => {
     setTimeout(() => {
+        // Hide loader
         document.getElementById('pageLoader').classList.add('hidden');
+
+        // Show page
+        document.body.classList.remove('page-hidden');
+        document.body.classList.add('page-visible');
+
+        // Refresh AOS after reveal
+        if (window.AOS) {
+            AOS.refresh();
+        }
     }, 4000);
 });
 

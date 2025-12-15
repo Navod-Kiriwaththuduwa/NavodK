@@ -416,3 +416,18 @@ a:hover {
     letter-spacing: 0.08em;
 }
 
+/* =========================
+   Page Visibility Control
+========================= */
+.page-hidden main,
+.page-hidden header,
+.page-hidden footer {
+    visibility: hidden;
+}
+
+.page-visible main,
+.page-visible header,
+.page-visible footer {
+    visibility: visible;
+}
+
