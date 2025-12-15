@@ -20,7 +20,7 @@
     <!-- Custom Styles -->
     <link rel="stylesheet" href="styles.css">
 </head>
-<body class="light-mode page-hidden">
+<body class="light-mode">
 
 <!-- Page Loader -->
 <div id="pageLoader">
@@ -707,22 +707,41 @@
             setTheme(isDark);
             localStorage.setItem('navod-theme', isDark ? 'dark' : 'light');
         });
-
-// Page Loader - block page until loader finishes
+// Page Loader - wait until banner images are loaded
 window.addEventListener('load', () => {
-    setTimeout(() => {
-        // Hide loader
-        document.getElementById('pageLoader').classList.add('hidden');
+    const loader = document.getElementById('pageLoader');
+    const banners = document.querySelectorAll('.hero-banner');
 
-        // Show page
-        document.body.classList.remove('page-hidden');
-        document.body.classList.add('page-visible');
+    let loadedCount = 0;
+    const totalBanners = banners.length;
 
-        // Refresh AOS after reveal
-        if (window.AOS) {
-            AOS.refresh();
+    function hideLoader() {
+        loader.classList.add('hidden');
+    }
+
+    banners.forEach(img => {
+        if (img.complete) {
+            loadedCount++;
+        } else {
+            img.addEventListener('load', () => {
+                loadedCount++;
+                if (loadedCount === totalBanners) hideLoader();
+            });
+
+            img.addEventListener('error', () => {
+                loadedCount++;
+                if (loadedCount === totalBanners) hideLoader();
+            });
         }
-    }, 4000);
+    });
+
+    // If all images were already cached
+    if (loadedCount === totalBanners) {
+        hideLoader();
+    }
+
+    // Safety fallback (max wait: 6s)
+    setTimeout(hideLoader, 6000);
 });
 
     </script>
